@@ -7,6 +7,19 @@
 		return;
 	}
 
+
+	function bergdoll_scripts() {
+    if ( !is_admin() ) {
+      wp_deregister_script('jquery');
+      wp_register_script('jquery', get_template_directory_uri() . '/js/min/jquery-min.js', '1.11.0', false);
+      wp_enqueue_script('jquery');
+    }
+    wp_enqueue_script('plugins-js',  get_template_directory_uri() . '/js/min/plugins-min.js', array('jquery'));
+    wp_enqueue_script( 'scripts-js', get_template_directory_uri() . '/js/min/scripts-min.js', array('jquery'), '1.0', true );
+  }
+
+  add_action( 'wp_enqueue_scripts', 'bergdoll_scripts' );
+
 	class StarterSite extends TimberSite {
 
 		function __construct(){

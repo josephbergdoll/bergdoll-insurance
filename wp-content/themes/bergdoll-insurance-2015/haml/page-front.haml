@@ -10,25 +10,26 @@
 
     {% if states %}
     I live in
-    %select
+    %select#state_select
       {% for state in states %}
       {% if state.state_default == 1 %}
-      %option{:value => "{{ state.state_name }}", :selected => "true"} {{ state.state_name }}
+      %option{:value => "{{ state.state_name }}", :selected => "true", :data => {"opts" => "{{ state.state_name|lower }}-opts"}} {{ state.state_name }}
       {% else %}
-      %option{:value => "{{ state.state_name}}"} {{ state.state_name }}
+      %option{:value => "{{ state.state_name}}", :data => {"opts" => "{{ state.state_name|lower }}-opts"}} {{ state.state_name }}
       {% endif %}
       {% endfor %}
     {% for state in states %}
-    %div{:class => "{{ state.state_name }}-opts"}
+    %div{:class => "state-opts {{ state.state_name|lower}}-opts {% if state.state_default == 1 %}active{% endif %}"}
       and I'd like a quote for
-      %select
+      %select.product_select
+        %option{:selected => true, :disabled => true}
         {% for product in state.state_products %}
-        %option{:value => "{{product.product_name}}", :data => {"link" => "{{product.product_link}}"}} {{product.product_name}}
+        %option{:value => "{{product.product_name}}", :data => {"href" => "{{product.product_link}}"}} {{product.product_name}}
         {% endfor %}
       insurance.
     {% endfor %}
 
-    %a.button.inactive{:href => "#", :target => "new"} Start Quote
+    %a#start_quote.button.inactive{:href => "#", :target => "new"} Start Quote
 
 
 
