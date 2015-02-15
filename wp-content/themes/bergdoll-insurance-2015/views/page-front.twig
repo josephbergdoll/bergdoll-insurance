@@ -1,0 +1,33 @@
+{% extends 'theme.twig' %}
+{% block content %}
+<div class='page'>
+  <div class='wrapper'>
+    <h1>{{ post.title }}</h1>
+    <div class='post-content-body'>{{ post.content }}</div>
+    {% if states %}
+    I live in
+    <select>
+      {% for state in states %}
+      {% if state.state_default == 1 %}
+      <option selected='true' value='{{ state.state_name }}'>{{ state.state_name }}</option>
+      {% else %}
+      <option value='{{ state.state_name}}'>{{ state.state_name }}</option>
+      {% endif %}
+      {% endfor %}
+    </select>
+    {% for state in states %}
+    <div class='{{ state.state_name }}-opts'>
+      and I'd like a quote for
+      <select>
+        {% for product in state.state_products %}
+        <option data-link='{{product.product_link}}' value='{{product.product_name}}'>{{product.product_name}}</option>
+        {% endfor %}
+      </select>
+      insurance.
+    </div>
+    {% endfor %}
+    <a class='button inactive' href='#' target='new'>Start Quote</a>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

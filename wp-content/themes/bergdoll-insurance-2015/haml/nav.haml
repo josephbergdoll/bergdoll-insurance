@@ -1,0 +1,12 @@
+%ul.main-nav.clearfix
+  {% for item in mainNav.get_items %}
+  %li{:class => "{{item.classes | join(' ')}}"}
+    %a{:href => "{{item.link}}", :class => "ajax"} {{item.title}}
+    {% if item.get_children %}
+    %ul.sub-nav
+      {% for child in item.get_children %}
+      %li.sub-nav-item
+        %a{:href => "{{item.link}}", :class => "{{item.classes | join(' ')}}"} {{item.title}}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}

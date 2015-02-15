@@ -1,0 +1,11 @@
+{% extends 'theme.twig' %}
+
+{% block content %}
+
+.page
+  .wrapper
+    %h1 {{ post.title }}
+
+    .post-content-body {{ post.content }}
+
+{% endblock %}

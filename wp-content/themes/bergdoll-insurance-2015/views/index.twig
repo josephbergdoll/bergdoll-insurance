@@ -1,10 +1,4 @@
-{% extends "base.twig" %}
-
+{% extends "theme.twig" %}
 {% block content %}
-	<h2>{{foo}}</h2>
-	<p>{{qux}}</p>
-	{% for post in posts %}
-		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-	{% endfor %}
-
+<div class='{{ classes }} index'></div>
 {% endblock %}

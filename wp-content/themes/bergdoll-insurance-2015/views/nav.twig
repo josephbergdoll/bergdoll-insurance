@@ -1,0 +1,16 @@
+<ul class='main-nav clearfix'>
+  {% for item in mainNav.get_items %}
+  <li class="{{item.classes | join(' ')}}">
+    <a class='ajax' href='{{item.link}}'>{{item.title}}</a>
+    {% if item.get_children %}
+    <ul class='sub-nav'>
+      {% for child in item.get_children %}
+      <li class='sub-nav-item'>
+        <a class="{{item.classes | join(' ')}}" href='{{item.link}}'>{{item.title}}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>

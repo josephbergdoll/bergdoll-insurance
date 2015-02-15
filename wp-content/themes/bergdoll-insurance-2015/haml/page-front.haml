@@ -1,1 +1,37 @@
-page-front.haml
+{% extends 'theme.twig' %}
+
+{% block content %}
+
+.page
+  .wrapper
+    %h1 {{ post.title }}
+
+    .post-content-body {{ post.content }}
+
+    {% if states %}
+    I live in
+    %select
+      {% for state in states %}
+      {% if state.state_default == 1 %}
+      %option{:value => "{{ state.state_name }}", :selected => "true"} {{ state.state_name }}
+      {% else %}
+      %option{:value => "{{ state.state_name}}"} {{ state.state_name }}
+      {% endif %}
+      {% endfor %}
+    {% for state in states %}
+    %div{:class => "{{ state.state_name }}-opts"}
+      and I'd like a quote for
+      %select
+        {% for product in state.state_products %}
+        %option{:value => "{{product.product_name}}", :data => {"link" => "{{product.product_link}}"}} {{product.product_name}}
+        {% endfor %}
+      insurance.
+    {% endfor %}
+
+    %a.button.inactive{:href => "#", :target => "new"} Start Quote
+
+
+
+    {% endif %}
+
+{% endblock %}
