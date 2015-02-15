@@ -1,0 +1,29 @@
+#quote {
+  .quote-form {
+    text-align: center;
+    @include span-columns(10);
+    @include shift(1);
+    font-size: $type-quote;
+    font-weight: $type-light;
+  }
+  select,
+  .js_width_tmp {
+    font-size: inherit;
+    font-weight: $type-bold;
+  }
+  .product_select {
+    width: 10rem;
+  }
+
+  .state-opts {
+    display: none;
+    &.active {
+      display: inline !important;
+    }
+  }
+
+  #start_quote {
+    display: table;
+    margin: 4rem auto;
+  }
+}

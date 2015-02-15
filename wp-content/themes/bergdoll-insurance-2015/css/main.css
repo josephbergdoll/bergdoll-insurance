@@ -134,7 +134,7 @@ body {
   line-height: 1.5;
   width: 100%;
   -webkit-tap-highlight-color: black;
-  font-family: "Proxima Nova", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "Theinhardt", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-weight: 400;
   background: white;
   color: #333; }
@@ -178,25 +178,12 @@ a {
   display: none; }
 
 button, .button {
-  display: inline-block;
   text-decoration: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
   -o-appearance: none;
-  appearance: none;
-  font-family: "Proxima Nova", "Helvetica Neue", Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  padding: 0.75rem 4rem;
-  border-radius: 0.35rem;
-  background: #414042;
-  color: white;
-  cursor: pointer; }
-  button:hover, .button:hover {
-    background: #232323; }
-  button.inactive, .inactive.button {
-    background: #ddd;
-    cursor: not-allowed; }
+  appearance: none; }
 
 .inline-list li {
   display: inline; }
@@ -227,24 +214,6 @@ button, .button {
 
 .line-large {
   line-height: 1.4 !important; }
-
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  border: 0;
-  outline: 0;
-  border-radius: 0;
-  background: transparent;
-  padding-bottom: 0.1rem;
-  font-family: "Proxima Nova", "Helvetica Neue", Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  cursor: pointer; }
-  select:hover {
-    border-bottom: 1px solid black; }
 
 .wrapper {
   position: relative;
@@ -589,28 +558,3 @@ select {
 
 .no-padding {
   padding: 0 !important; }
-
-#quote .quote-form {
-  text-align: center;
-  float: left;
-  display: block;
-  margin-right: 2.3576515979%;
-  width: 82.9403914003%;
-  margin-left: 8.5298042998%;
-  font-size: 3rem;
-  font-weight: 300; }
-  #quote .quote-form:last-child {
-    margin-right: 0; }
-#quote select,
-#quote .js_width_tmp {
-  font-size: inherit;
-  font-weight: 600; }
-#quote .product_select {
-  width: 10rem; }
-#quote .state-opts {
-  display: none; }
-  #quote .state-opts.active {
-    display: inline !important; }
-#quote #start_quote {
-  display: table;
-  margin: 4rem auto; }

@@ -1,0 +1,23 @@
+// Forms
+
+%sg-select {
+  @include appearance(none);
+  border: 0;
+  outline: 0;
+  border-radius: 0;
+  background: transparent;
+  padding-bottom: 0.1rem;
+  font-family: $sans;
+  font-size: $type-paragraph;
+  border-bottom: $standard-border;
+  cursor: pointer;
+  &:hover {
+    border-bottom: $border-black;
+  }
+  option {
+  }
+}
+
+select {
+  @extend %sg-select !optional;
+}

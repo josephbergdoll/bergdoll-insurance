@@ -1,6 +1,6 @@
 // Type Styles
 $paragraph: "minion-pro", "Adobe Caslon Pro", "Georgia", Times, serif;
-$sans: "Theinhardt", "Helvetica Neue", Arial, Helvetica, sans-serif;
+$sans: "Proxima Nova", "Helvetica Neue", Arial, Helvetica, sans-serif;
 $monospace: "inconsolata", "Nitti","Courier New", Courier, monospace;
 
 $type-black: 800;
@@ -12,8 +12,10 @@ $type-light: 300;
 // Font Sizes
 $type-button: 0.6875rem;
 $type-small: 0.75rem;
-$type-paragraph: 0.875rem;
-$type-big: 0.875rem;
+$type-paragraph: 1rem;
+$type-button: 1rem;
+$type-big: 2rem;
+$type-quote: 3rem;
 
 // Line Heights
 $line-small: 1;
@@ -93,9 +95,7 @@ $vertical-bumper-quarter: $vertical-bumper * 0.25;
 $flex-gutter: flex-gutter();
 
 $large-nav-width: 9.375rem;
-
 $large-link-padding: 1.35rem 0 0;
-
 $view-icon-width: 1.05rem;
 
 // Header Specific
@@ -112,25 +112,9 @@ $nav-horz-bumper-large: 0.6875rem;
 $nav-vert-bumper: $header-bumper-large;
 
 // Button Styles
-$button-padding: 0.2rem 0.75rem;
+$button-padding: 0.75rem 4rem;
 $button-border-radius: 0.35rem;
 
-// Portfolio Card Specific
-$portfolio-thumb-padding: 1.5rem;
-
-// Portfolio Page Specific
-$arrow-button-width: 2.5rem;
-$arrow-button-height: $arrow-button-width * 1.65;
-$arrow-button-padding: 1rem;
-
-$portfolio-controls-height: 1.5rem;
-$portfolio-bumper-spacing: $portfolio-controls-height + $vertical-bumper-half + $vertical-bumper-quarter;
-
-$portfolio-slide-icon: 2.5rem;
-
-
-// Artist Card Specific
-$artist-card-image-padding: 60%;
 
 // Borders
 $border-width: 1px;

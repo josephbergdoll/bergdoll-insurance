@@ -1,6 +1,6 @@
 /*
-  Theme Name: Levine-Leavitt
-  Description: The theme for artist representation agency Levine/Leavitt's website – designed in 2015.
+  Theme Name: Bergdoll Insurance
+  Description: The theme for Arizona insurance agency Bergdoll Insurance's website – designed in 2015.
   Author: Joseph Bergdoll / Extended Play
   Author URI: https://www.ep-ny.com/
 */
@@ -19,21 +19,9 @@
 @import "global/_icons";
 @import "global/_base";
 @import "global/_styleguide";
+@import "global/_forms";
 @import "global/_layout";
 @import "global/_utils";
 
-// Components
-@import "components/_header";
-@import "components/_nav";
-@import "components/_footer";
-@import "components/_artist-card";
-@import "components/_portfolio-card";
-
-// Post Types
-@import "templates/_index";
-@import "templates/_page-front";
-@import "templates/_archive-artists";
-@import "templates/_single-post";
-@import "templates/_page-about";
-@import "templates/_single-artist";
-@import "templates/_single-portfolio";
+// Front Page Sections
+@import "sections/_quote";
