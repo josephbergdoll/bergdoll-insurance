@@ -16,6 +16,7 @@ $(document).ready(function() {
     var optsClass = '.' + showOpts;
     $(optsClass).siblings('.active').fadeOut(transitionDuration, function() {
       $(this).removeClass('active');
+      $('.product_select').val([]);
       $(optsClass).fadeIn(transitionDuration/2).addClass('active');
     });
     $quoteButton.addClass('inactive').removeAttr('href');
