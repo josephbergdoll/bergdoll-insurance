@@ -8,14 +8,15 @@ $type-bold: 600;
 $type-medium: 500;
 $type-book: 400;
 $type-light: 300;
+$type-thin: 100;
 
 // Font Sizes
 $type-button: 0.6875rem;
 $type-small: 0.75rem;
 $type-paragraph: 1rem;
-$type-button: 1rem;
+$type-button: 0.6875rem;
 $type-big: 2rem;
-$type-quote: 3rem;
+$type-quote: 2.5rem;
 
 // Line Heights
 $line-small: 1;
@@ -37,6 +38,10 @@ $black: black;
 
 $red: #f04242;
 $red-dark: darken($red, 10%);
+
+$blue: #00b6ff;
+$light-blue: lighten($blue, 15%);
+$dark-blue: darken($blue, 10%);
 
 $lightest-white: #fbfbfb;
 $lighter-white: #f8f8f8;
@@ -62,8 +67,7 @@ $text-lighter-grey: #cccccc;
 $text-light-grey: #aaaaaa;
 $text-mid-grey: #979797;
 $text-dark-grey: #777;
-// $text-grey-paragraph: #58595b;
-$text-grey-paragraph: #888;
+$text-grey-paragraph: #58595b;
 
 $light-black: #414042;
 $mid-black: #333;
@@ -112,8 +116,8 @@ $nav-horz-bumper-large: 0.6875rem;
 $nav-vert-bumper: $header-bumper-large;
 
 // Button Styles
-$button-padding: 0.75rem 4rem;
-$button-border-radius: 0.35rem;
+$button-padding: 1rem 4rem;
+$button-border-radius: 0.5rem;
 
 
 // Borders
@@ -123,6 +127,9 @@ $thick-border-width: 2px;
 $border-trans: $border-width solid transparent;
 $standard-border: $border-width solid $grey-border;
 $border-dotted: $border-width dotted $grey-border;
+
+$border-blue: $border-width solid $blue;
+$thick-border-blue: $thick-border-width solid $blue;
 
 $border-black: $border-width solid $black;
 $thick-border-black: $thick-border-width solid $black;

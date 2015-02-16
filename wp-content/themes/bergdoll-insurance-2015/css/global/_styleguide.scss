@@ -34,20 +34,32 @@ a {
   @include appearance(none);
   font-family: $sans;
   font-size: $type-button;
+  font-weight: $type-bold;
+  text-transform: uppercase;
+  letter-spacing: $close-tracking;
   padding: $button-padding;
   border-radius: $button-border-radius;
   background: $light-black;
   color: $white;
   cursor: pointer;
+  transition: background $hover-out ease-out, box-shadow $hover-out ease-out, transform $hover-out ease-out;
   &:hover {
     background: $dark-black;
-  }
-  &.inactive {
-    background: $mid-grey;
-    cursor: not-allowed;
+    transition: background $hover-in ease-out, box-shadow $hover-out ease-in, transform $hover-in ease-out
   }
   &:active {
-    @extend .button-active !optional;
+    transform: scale(0.96);
+  }
+  &:focus {
+    background: $dark-black;
+    box-shadow: 0px 2px 10px $black-light-transparent;
+  }
+  &.inactive {
+    background: $light-grey !important;
+    cursor: not-allowed;
+    &:focus {
+      box-shadow: none !important;
+    }
   }
 }
 
