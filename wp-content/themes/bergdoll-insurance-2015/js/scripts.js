@@ -6,6 +6,8 @@ var
 
 $(document).ready(function() {
 
+  document.cookie = "WT_FPC=id=251b136efacf418d00d1424028079863:lv=1424566119478:ss=1424565737243";
+
   var
     $stateSelect = $('#state_select'),
     $quoteButton = $('#start_quote');
