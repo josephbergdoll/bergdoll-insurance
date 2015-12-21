@@ -1,2 +1,2 @@
-*.scssc
-*/.sass-cache
+_site
+.sass-cache
