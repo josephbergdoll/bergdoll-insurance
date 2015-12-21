@@ -11,4 +11,27 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 # Build settings
-markdown: kramdown
+port: 4040
+markdown: rdiscount
+timezone: America/New_York
+source: .
+destination: ./_site
+layouts: ./_layouts
+plugins: ./_plugins
+sass:
+  sass_dir: css
+  style: compressed
+gems:
+  - octopress-autoprefixer
+collections:
+  sections:
+    output: true
+    permalink: /sections/:path/
+exclude: [js/plugins/, js/raw/]
+defaults: 
+  -
+    scope:
+      path: ""
+      type: sections
+    values:
+      layout: bare
