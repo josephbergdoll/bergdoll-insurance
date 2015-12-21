@@ -2,11 +2,19 @@
 var
   $body = $('body');
 
+  
 
+  function openWin() {
+    var windowLocation = $('.quote-form').attr('data-src');
+    myWindow = window.open(windowLocation, "_blank", "width=600, height=600");
+    window.opener.$('.getQuote').trigger('click');
+  }
+
+  function closeWin() {
+    myWindow.close();
+  }
 
 $(document).ready(function() {
-
-  document.cookie = "WT_FPC=id=251b136efacf418d00d1424028079863:lv=1424566119478:ss=1424565737243";
 
   var
     $stateSelect = $('#state_select'),
@@ -41,6 +49,21 @@ $(document).ready(function() {
     if ($(this).hasClass('inactive')) {
       e.preventDefault();
     }
+    else {
+      e.preventDefault();
+      openWin();
+      var goTo = $(this).attr("href");  
+      // setTimeout(function() {
+      //   window.location.href = goTo;
+      //   closeWin();
+      // },400);
+    }
   });
+
+});
+
+$(window).load(function() {
+
+  
 
 });

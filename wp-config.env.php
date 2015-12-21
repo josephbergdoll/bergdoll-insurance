@@ -16,7 +16,7 @@
 
 // Set environment based on hostname
 switch ($hostname) {
-    case 'localhost':
+    case 'bifs.dev':
         define('WP_ENV', 'development');
         break;
     

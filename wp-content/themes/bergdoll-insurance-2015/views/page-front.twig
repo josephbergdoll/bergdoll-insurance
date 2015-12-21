@@ -4,7 +4,7 @@
   <div class='wrapper'>
     <h1>Get a quote. Fast.</h1>
     {% if states %}
-    <div class='quote-form'>
+    <div class='quote-form' data-src='{{nwlink}}'>
       I live in
       <select id='state_select'>
         {% for state in states %}

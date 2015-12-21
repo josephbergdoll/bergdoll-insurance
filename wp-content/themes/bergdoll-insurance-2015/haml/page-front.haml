@@ -8,7 +8,7 @@
     
     {% if states %}
 
-    .quote-form
+    .quote-form{:data => {"src" => "{{nwlink}}"}}
       I live in
       %select#state_select
         {% for state in states %}
