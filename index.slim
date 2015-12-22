@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+{% include header.slim %}
+
+section#get-quote.full-viewport
+
+  h1
+    | I live in
+    select#quote-state name="quote-state"
+      {% for state in site.data.quote.states %}
+      option value="{{ state.value }}" {{ state.title }}
+      {% endfor %} 
+    | and I want to insure my
+    select#quote-product name="quote-product" autofocus="autofocus"
+      option value="" disabled="disabled" selected="selected"
+      {% for product in site.data.quote.products %}
+      option value="{{ product.value }}" {{ product.title }}
+      {% endfor %}
+
+
+  button#submit-quote.js-quote-submit disabled="disabled"
+    | Start Quote
+
+
+section#about
+  
+  / h2 {{ site.data.about.title }}
+
+section#contact
+
+{% include footer.slim %}

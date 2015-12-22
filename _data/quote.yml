@@ -1,0 +1,46 @@
+states:
+  - title: Arizona
+    value: AZ
+
+  - title: Nevada
+    value: NV
+
+  - title: Ohio
+    value: OH
+
+products:
+  - title: Auto
+    value: Auto
+
+  - title: Motorcycle
+    value: Motorcycle
+
+  - title: ATV
+    value: Atv
+
+  - title: Boat
+    value: Boat
+
+  - title: Classic Car
+    value: ClassicCar
+
+  - title: Condo
+    value: Condominium
+
+  - title: Financial
+    value: Financial
+
+  - title: Home
+    value: Homeowner
+
+  - title: Identity Theft
+    value: Idtheft
+
+  - title: Life
+    value: Life
+
+  - title: Personal Watercarft
+    value: Personal Watercarft
+
+  - title: Renters
+    value: Property

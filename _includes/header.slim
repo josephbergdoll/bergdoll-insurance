@@ -1,0 +1,10 @@
+.header-main
+  .wrapper
+    a.logo href="/"
+     span.bots {{ site.title }}
+
+
+    nav.nav-main
+      {% for item in site.data.nav %}
+      a href="{{ item.url }}" {{ item.title }}
+      {% endfor %}
