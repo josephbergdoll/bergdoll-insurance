@@ -1,0 +1,34 @@
+.header-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: $full-gutter;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    display: inline-block;
+    width: rem(160);
+    svg {
+      max-width: 100%;
+    }
+    .text-bergdoll {
+      fill: $white;
+    }
+    .text-insurance {
+      fill: $blue-highlight;
+    }
+  }
+
+  .nav-main {
+    a {
+      display: inline-block;
+      padding: $half-gutter;
+      margin-top: -$half-gutter;
+      margin-bottom: -$half-gutter;
+    }
+  }
+  
+}

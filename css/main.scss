@@ -16,13 +16,14 @@
 @import "global/mixins";
 @import "global/base";
 @import "global/styleguide";
-// @import "global/forms";
+@import "global/forms";
 @import "global/layout";
 @import "global/utils";
 @import "global/slick";
 
 // Components
-// @import "components/*";
+@import "components/header";
+@import "components/get-quote";
 
 // Templates
 // @import "templates/*";

@@ -1,0 +1,17 @@
+#get-quote {
+  background: $blue-bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .quote-form {
+    text-align: center;
+  }
+  
+  select {
+    @extend %sg-h1;
+  }
+
+
+
+}
