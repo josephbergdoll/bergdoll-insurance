@@ -8,9 +8,9 @@
 }
 
 @mixin font-url($fontname) {
-  src: url('fonts/#{$fontname}.eot');
-  src: url('fonts/#{$fontname}.eot?#iefix') format('embedded-opentype'),
-       url('fonts/#{$fontname}.woff') format('woff');
+  src: url('../fonts/#{$fontname}.eot');
+  src: url('../fonts/#{$fontname}.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/#{$fontname}.woff') format('woff');
 }
 
 @mixin font($familyname, $fontname, $weight, $style) {

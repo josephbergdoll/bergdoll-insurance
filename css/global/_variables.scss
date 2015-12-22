@@ -11,9 +11,8 @@ $header-height-small: rem(50);
 $header-height-large: rem(108);
 
 // Type Styles
-$paragraph:  "Theinhardt", Georgia, Times, serif;
-$sans: "Theinhardt", 'Helvetica Neue', Arial, Helvetica, sans-serif;
-$headline: "Theinhardt", 'Helvetica Neue', Arial, Helvetica, sans-serif;
+$sans: "BIFS-sans", 'Helvetica Neue', Arial, Helvetica, sans-serif;
+$headline: "Sharp Sans No1", 'Helvetica Neue', Arial, Helvetica, sans-serif;
 
 $type-black: 800;
 $type-bold: 700;
@@ -22,8 +21,8 @@ $type-book: 400;
 $type-light: 100;
 
 // Font Sizes
-$type-paragraph: 0.875rem; // 14pt
-$type-small: 1.5rem; // 24pt
+$type-paragraph: 0.9375rem; // 15pt
+$type-small: 1.5rem; // 20pt
 $type-mid: 2rem; // 36pt
 $type-large: 3rem; // 48pt
 
@@ -47,6 +46,7 @@ $paragraph-text-indent: 2em;
 // Theme Color Scheme
 $blue-bg: #0b61b7;
 $blue-highlight: #27aae1;
+$blue-highlight-hover: lighten($blue-highlight, 8%);
 
 // Brands
 $itunes-red: #f22937;
@@ -156,7 +156,9 @@ $artist-card-image-padding: 60%;
 
 // Borders
 $border-width: 1px;
-$thick-border-width: 2px;
+$thick-border-width: 3px;
+
+$standard-border-radius: 5px;
 
 $border-orange: $border-width solid $orange;
 $border-transparent: $border-width solid transparent;

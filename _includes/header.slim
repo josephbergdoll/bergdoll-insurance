@@ -8,5 +8,6 @@ header.header-main
 
   nav.nav-main
     {% for item in site.data.nav %}
-    a href="{{ item.url }}" {{ item.title }}
+    a class="has-absolute {% if forloop.first %}current-menu-item{% endif %}" href="{{ item.url }}"
+      span {{ item.title }}
     {% endfor %}

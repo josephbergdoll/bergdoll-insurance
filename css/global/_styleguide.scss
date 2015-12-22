@@ -1,4 +1,22 @@
 // Global Styleguide
+body {
+  -webkit-tap-highlight-color: black;
+  font-family: $sans;
+  font-weight: $type-book;
+  background-color: $body-bg-color;
+  overflow-x: hidden;
+  color: $black;
+}
+
+::selection {
+  background: $light-white;
+  color: $text-grey-paragraph;
+}
+
+::-moz-selection {
+  background: $light-white;
+  color: $text-grey-paragraph;
+}
 
 a {
   color: $black;
@@ -89,7 +107,7 @@ a {
 }
 
 %sg-h3 {
-  font-family: $headline;
+  font-family: $sans;
   font-size: $type-mid;
   font-weight: $type-book;
   @extend %aa-text;

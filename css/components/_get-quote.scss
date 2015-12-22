@@ -5,12 +5,36 @@
   justify-content: center;
 
   .quote-form {
+    margin-top: $vertical-bumper;
     text-align: center;
+    color: $white-mid-transparent;
+
+    h1 {
+      font-size: 5vw;
+    }
   }
   
   select {
     @extend %sg-h1;
+    font-size: inherit;
+    font-weight: $type-bold;
+    color: $white-light-transparent;
+    border-bottom: $border-width solid $white-light-transparent;
+    
+    &.valid {
+      color: $white;
+    }
+
+    &:focus {
+      border-bottom: $thick-border-width solid $white;
+    }
   }
+
+  button {
+    margin-top: $vertical-bumper;
+  }
+
+
 
 
 

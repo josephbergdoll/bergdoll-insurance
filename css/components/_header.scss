@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: $full-gutter;
+  padding: $full-gutter * 0.75;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,10 +24,42 @@
 
   .nav-main {
     a {
+      @extend %aa-text;
       display: inline-block;
-      padding: $half-gutter;
-      margin-top: -$half-gutter;
+      font-weight: $type-bold;
+      padding: 0 $half-gutter * 0.75 $half-gutter;
+      margin-top: -$full-gutter * 1.5;
       margin-bottom: -$half-gutter;
+      span {
+        position: relative;
+        padding-top: $full-gutter * 1.25;
+      }
+      &:not(:hover) {
+        color: $white-transparent;
+      }
+      &:hover {
+        color: $white;
+      }
+      &:last-of-type {
+        padding-right: 0;
+      }
+
+      &.current-menu-item {
+        &:not(:hover) {
+          color: $white-mid-transparent;
+        }
+        span {
+          &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 3px;
+            left: 0;
+            width: 100%;
+            border-bottom: $thick-border-width solid $blue-highlight;
+          }
+        }
+      }
     }
   }
   

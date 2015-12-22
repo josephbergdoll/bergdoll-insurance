@@ -13,3 +13,26 @@ select,
 button {
   @extend %form-reset;
 }
+
+%sg-button {
+  @extend %aa-text;
+  cursor: pointer;
+  font-family: $sans;
+  font-size: $type-paragraph;
+  color: $white;
+  font-weight: $type-bold;
+  background-color: $blue-highlight;
+  border-radius: $standard-border-radius;
+  padding: 1.25rem 6rem 1.15rem;
+  transition: background-color $hover-out $ease-out-cubic;
+  border-bottom: $thick-border-width solid $blue-highlight-hover;
+  &:hover {
+    background-color: $blue-highlight-hover;
+    transition: background-color $hover-in $ease-out-cubic;
+  }
+}
+
+*[class*="button"],
+button {
+  @extend %sg-button;
+}

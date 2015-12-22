@@ -1,0 +1,9 @@
+// Fonts
+
+@font-face {
+  @include font('BIFS-sans', 'sans-medium', '700', 'normal');
+}
+
+@font-face {
+  @include font('BIFS-sans', 'sans-regular', 'normal', 'normal');
+}
