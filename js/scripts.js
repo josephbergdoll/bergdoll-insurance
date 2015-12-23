@@ -4,7 +4,8 @@ $(document).ready(function() {
   var
     $html = $('html'),
     $body = $('body'),
-    $getQuote = $body.find('#get-quote');
+    $getQuote = $body.find('#get-quote'),
+    $submitQuote = $body.find('#submit-quote');
 
   $getQuote.find('.js-pretty-select').each(function() {
     var
@@ -61,7 +62,30 @@ $(document).ready(function() {
       if ($prettySelect.hasClass(showOptionsClass)) {
         $prettySelect.removeClass(showOptionsClass);
       }
+      if ($realSelect.parents('.pretty-select').attr('id') === 'product-select' && $getQuote.find('.quote-form').hasClass('invalid')) {
+        $getQuote.find('quote-form').removeClass('invalid');
+        $submitQuote.prop('disabled', false);
+      }
     });
   });
+
+  $submitQuote.click(function(e) {
+    e.preventDefault();
+    var 
+      state = $getQuote.find('select#quote-state').val(),
+      product = $getQuote.find('select#quote-product').val(),
+      nwQuoteUrl = 'https://getquote.nationwide.com/qrp-web/qrpAction.action?NI.qt_st=&productType='+product+'&state='+state+'&quoteType=initiateQuote&NI.qt_prod=Auto&submitButtonName=Go&pdsNumber=020027684&WT.mc_id=NW_SC_Agt_FB-MainPromo_Facebook_Banner_813x311_Get-A-Quote_All_All&WT.tsrc=SclAgt',
+      win = window.open(nwQuoteUrl, 'new');
+
+    console.log(state + ', ' + product);
+    if (win) {
+      win.focus();
+    }
+    else {
+      alert('Please allow popups.');
+    }
+  });
+
+  
 
 });

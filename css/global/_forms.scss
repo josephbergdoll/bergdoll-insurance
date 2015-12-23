@@ -26,9 +26,15 @@ button {
   padding: 1.25rem 6rem 1.15rem;
   transition: background-color $hover-out $ease-out-cubic;
   border-bottom: $thick-border-width solid $blue-highlight-hover;
+  transition: all $hover-out $ease-out-cubic;
   &:hover {
     background-color: $blue-highlight-hover;
-    transition: background-color $hover-in $ease-out-cubic;
+    transition: all $hover-in $ease-out-cubic;
+  }
+  &:disabled {
+    background: $blue-bg-dark;
+    color: $blue-bg;
+    border-bottom: $thick-border-width solid transparent;
   }
 }
 
