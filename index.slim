@@ -1,5 +1,6 @@
 ---
 layout: default
+aboutTitle: 'Here for you, at all times.'
 ---
 
 {% include header.slim %}
@@ -26,7 +27,7 @@ section#get-quote.full-viewport
               {% for option in site.data.quote.states %}
               li data-value="{{ option.value }}" {{ option.title }}
               {% endfor %}
-        | and I want to insure my
+        | and need a quote for
         #product-select.pretty-select.js-pretty-select<>
           .form-field
             select.js-select id="quote-product" name="quote-product"
@@ -40,6 +41,7 @@ section#get-quote.full-viewport
               {% for option in site.data.quote.products %}
               li data-value="{{ option.value }}" {{ option.title }}
               {% endfor %}
+        | insurance.
 
 
         button#submit-quote.js-quote-submit disabled="disabled"
@@ -50,7 +52,7 @@ section#about
   .wrapper
     .row.paddings.double
       .small-12.medium-6.medium-offset-3.large-4.large-offset-4.columns
-        h3.blue.bottom-margin.half Here for you, at all times.
+        h3.blue.bottom-margin.half {{ page.aboutTitle }}
         p Lalalala
 
 section#contact

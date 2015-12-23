@@ -21,9 +21,6 @@ products:
   - title: Boat
     value: Boat
 
-  - title: Classic Car
-    value: ClassicCar
-
   - title: Condo
     value: Condominium
 
@@ -33,14 +30,11 @@ products:
   - title: Home
     value: Homeowner
 
-  - title: Identity Theft
-    value: Idtheft
-
   - title: Life
     value: Life
 
-  - title: Personal Watercarft
-    value: Personal Watercarft
+  - title: Watercraft
+    value: Personal+Watercraft
 
   - title: Renters
     value: Property

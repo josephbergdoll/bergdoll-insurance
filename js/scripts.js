@@ -22,7 +22,7 @@ $(document).ready(function() {
       console.log(value);
 
     if (value != null || value != undefined) {
-      var $selectedOption = $options.find('li[data-value='+value+']');
+      var $selectedOption = $options.find('li[data-value="'+value+'"]');
       $selected.text(valueLabel);
       $selectedOption.addClass(selectedClass);
       $prettySelect.addClass(validClass);
@@ -53,7 +53,7 @@ $(document).ready(function() {
     $realSelect.change(function(event) {
       var
         valueSelected = this.value,
-        $selectedOption = $options.find('li[data-value='+valueSelected+']'),
+        $selectedOption = $options.find('li[data-value="'+valueSelected+'"]'),
         selectedText = $selectedOption.text();
       $options.find('.'+selectedClass).removeClass(selectedClass);
       $selectedOption.addClass(selectedClass);
