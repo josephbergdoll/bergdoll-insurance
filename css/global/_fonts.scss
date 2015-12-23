@@ -1,9 +1,15 @@
 // Fonts
 
 @font-face {
-  @include font('BIFS-sans', 'sans-medium', '700', 'normal');
+  font-family: 'Sharp';
+  @include font-url('sharp-book');
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-  @include font('BIFS-sans', 'sans-regular', 'normal', 'normal');
+  font-family: 'Sharp';
+  @include font-url('sharp-bold');
+  font-weight: 700;
+  font-style: normal;
 }

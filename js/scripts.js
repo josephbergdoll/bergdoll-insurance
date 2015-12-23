@@ -38,6 +38,7 @@ $(document).ready(function() {
         $prettySelect.addClass(showOptionsClass);
         $options.velocity('slideDown', {duration: 300, easing: "easeOutCubic", queue: false});
         $options.velocity({opacity: 1}, {duration: 300, easing: "easeOutCubic", queue: false});
+        $options.focus();
       }
     });
 

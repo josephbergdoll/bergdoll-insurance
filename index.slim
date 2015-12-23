@@ -24,6 +24,7 @@ section#get-quote.full-viewport
               {% endfor %}
           .select-container
             span.selected-option
+            ul.select-keyboard-trigger tabindex="0"
             ul.select-options tabindex="-1"
               {% for option in site.data.quote.states %}
               li data-value="{{ option.value }}" {{ option.title }}
@@ -38,6 +39,7 @@ section#get-quote.full-viewport
               {% endfor %}
           .select-container
             span.selected-option
+            ul.select-keyboard-trigger tabindex="0"
             ul.select-options tabindex="-1"
               {% for option in site.data.quote.products %}
               li data-value="{{ option.value }}" {{ option.title }}
