@@ -34,6 +34,11 @@ $(document).ready(function() {
 
     $selected.click(function(e) {
       e.preventDefault();
+      if ($body.find('.'+showOptionsClass)) {
+        var $openOptions = $body.find('.'+showOptionsClass);
+        $openOptions.removeClass(showOptionsClass);
+        $openOptions.find('.select-options').velocity('fadeOut', {duration: 200, easing: "easeOutCubic"});
+      }
       if (!$prettySelect.hasClass(showOptionsClass)) {
         $prettySelect.addClass(showOptionsClass);
         $options.velocity('slideDown', {duration: 300, easing: "easeOutCubic", queue: false});
