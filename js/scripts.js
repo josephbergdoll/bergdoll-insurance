@@ -76,16 +76,18 @@ $(document).ready(function() {
       product = $getQuote.find('select#quote-product').val(),
       nwQuoteUrl = 'https://getquote.nationwide.com/qrp-web/qrpAction.action?NI.qt_st=&productType='+product+'&state='+state+'&quoteType=initiateQuote&NI.qt_prod=Auto&submitButtonName=Go&pdsNumber=020027684&WT.mc_id=NW_SC_Agt_FB-MainPromo_Facebook_Banner_813x311_Get-A-Quote_All_All&WT.tsrc=SclAgt';
     $submitQuote.text('Loading Quote...').prop('disabled', true);
+    $getQuote.addClass('quote-loading');
     setTimeout(function() {
       var win = window.open(nwQuoteUrl, 'new');
       $submitQuote.text('Start Quote').prop('disabled', false);
+      $getQuote.removeClass('quote-loading');
       if (win) {
         win.focus();
       }
       else {
         alert('Please allow popups.');
       }
-    }, 1000);
+    }, 300);
     
   });
 

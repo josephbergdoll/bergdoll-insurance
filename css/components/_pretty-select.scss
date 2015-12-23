@@ -31,9 +31,9 @@
     color: $white-mid-transparent;
     background: transparent;
     transition: all $hover-out $ease-out-cubic;
-    border-bottom: $thick-border-width solid $white-light-transparent;
     line-height: $line-small * 1.1;
     cursor: pointer;
+    border-bottom: $thick-border-width solid $white-light-transparent;
     &:hover {
       color: $white;
       background: $blue-bg-dark;
@@ -56,7 +56,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    min-width: 250px;
+    width: rem(300);
     max-height: 300px;
     overflow: scroll;
     border: $border-dark-grey;
@@ -93,6 +93,7 @@
   &.valid {
     .selected-option {
       color: $white-dark-transparent;
+      min-width: 0 !important;
     }
   }
 

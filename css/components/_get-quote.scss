@@ -4,6 +4,11 @@
   align-items: center;
   justify-content: center;
 
+  .get-quote-text {
+    color: $white-light-transparent;
+    margin-top: -$vertical-bumper;
+  }
+
   .quote-form {
     margin-top: $vertical-bumper;
     text-align: center;
@@ -11,8 +16,14 @@
 
     form {
       font-family: $headline;
-      font-size: 5vw;
+      font-size: 10vw;
       line-height: $line-medium;
+      @include media($medium-only) {
+        font-size: 8vw;
+      }
+      @include media($large-up) {
+        font-size: 5vw;
+      }
     }
   }
 

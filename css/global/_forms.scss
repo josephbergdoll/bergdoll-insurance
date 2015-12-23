@@ -32,9 +32,13 @@ button {
     transition: all $hover-in $ease-out-cubic;
   }
   &:disabled {
+    cursor: not-allowed;
     background: $blue-bg-dark;
     color: $blue-bg;
     border-bottom: $thick-border-width solid transparent;
+  }
+  .quote-loading & {
+    cursor: wait;
   }
 }
 
