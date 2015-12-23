@@ -45,6 +45,7 @@ $paragraph-text-indent: 2em;
 
 // Theme Color Scheme
 $blue-bg: #0b61b7;
+$blue-bg-dark: darken($blue-bg, 5%);
 $blue-highlight: #27aae1;
 $blue-highlight-hover: lighten($blue-highlight, 8%);
 

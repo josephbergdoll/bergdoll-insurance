@@ -8,12 +8,12 @@ $(document).ready(function() {
 
   $getQuote.find('.js-pretty-select').each(function() {
     var
-      $this = $(this),
-      $realSelect = $this.find('.js-select'),
+      $prettySelect = $(this),
+      $realSelect = $prettySelect.find('.js-select'),
       value = $realSelect.val(),
       valueLabel = $realSelect.find('option:selected').text(),
-      $selected = $this.find('.selected-option'),
-      $options = $this.find('.select-options'),
+      $selected = $prettySelect.find('.selected-option'),
+      $options = $prettySelect.find('.select-options'),
       showOptionsClass = 'show-options',
       validClass = 'valid',
       selectedClass = 'selected';
@@ -24,17 +24,17 @@ $(document).ready(function() {
       var $selectedOption = $options.find('li[data-value='+value+']');
       $selected.text(valueLabel);
       $selectedOption.addClass(selectedClass);
-      $this.addClass(validClass);
+      $prettySelect.addClass(validClass);
     }
     else {
       var placeholder = $realSelect.find('option:first').text();
       $selected.text(placeholder);
     }
 
-    $this.click(function(e) {
+    $selected.click(function(e) {
       e.preventDefault();
-      if (!$this.hasClass(showOptionsClass)) {
-        $this.addClass(showOptionsClass);
+      if (!$prettySelect.hasClass(showOptionsClass)) {
+        $prettySelect.addClass(showOptionsClass);
         $options.velocity('slideDown', {duration: 300, easing: "easeOutCubic", queue: false});
         $options.velocity({opacity: 1}, {duration: 300, easing: "easeOutCubic", queue: false});
       }
@@ -44,13 +44,23 @@ $(document).ready(function() {
       e.preventDefault();
       var
         selectedValue = e.target.dataset.value;
-      console.log(selectedValue);
       $realSelect.val(selectedValue);
-      $options.velocity('fadeOut', {duration: 150, easing: "easeOutCubic"});
+      $realSelect.trigger('change');
+      $options.velocity('fadeOut', {duration: 300, easing: "easeOutCubic", queue: false});
     });
 
     $realSelect.change(function(event) {
-      console.log(event);
+      var
+        valueSelected = this.value,
+        $selectedOption = $options.find('li[data-value='+valueSelected+']'),
+        selectedText = $selectedOption.text();
+      $options.find('.'+selectedClass).removeClass(selectedClass);
+      $selectedOption.addClass(selectedClass);
+      $selected.text(selectedText);
+      $prettySelect.addClass(validClass);
+      if ($prettySelect.hasClass(showOptionsClass)) {
+        $prettySelect.removeClass(showOptionsClass);
+      }
     });
   });
 

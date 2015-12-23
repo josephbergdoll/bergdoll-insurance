@@ -7,7 +7,7 @@ layout: default
 section#get-quote.full-viewport
   .wrapper
   
-    .quote-form.small-12.medium-10.medium-offset-1.large-8.large-offset-2
+    .quote-form.small-12.medium-10.medium-offset-1
       form action=""
         | I live in
         .pretty-select.js-pretty-select<>
@@ -30,7 +30,7 @@ section#get-quote.full-viewport
         #product-select.pretty-select.js-pretty-select<>
           .form-field
             select.js-select id="quote-product" name="quote-product"
-              option value="Select a Value" disabled="disabled" selected="selected" &hellip;
+              option value="Select a Value" disabled="disabled" selected="selected" &nbsp;
               {% for option in site.data.quote.products %}
               option value="{{ option.value }}" {{ option.title }}
               {% endfor %}

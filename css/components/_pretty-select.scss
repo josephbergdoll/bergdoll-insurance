@@ -29,13 +29,15 @@
     min-width: rem(100);
     font-weight: $type-bold;
     color: $white-mid-transparent;
+    background: transparent;
     transition: all $hover-out $ease-out-cubic;
     border-bottom: $thick-border-width solid $white-light-transparent;
-    line-height: $line-xsmall;
+    line-height: $line-small * 1.1;
     cursor: pointer;
     &:hover {
       color: $white;
-      border-bottom: $thick-border-width solid $white-mid-transparent;
+      background: $blue-bg-dark;
+      border-bottom: $thick-border-width solid $blue-highlight;
     }
   }
 
@@ -60,6 +62,7 @@
     border: $border-dark-grey;
     border-radius: $standard-border-radius;
     opacity: 0;
+    z-index: 200;
 
     li {
       cursor: pointer;
