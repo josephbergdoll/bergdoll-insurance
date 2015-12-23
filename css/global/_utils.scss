@@ -40,6 +40,9 @@
 
 .top-margin {
   margin-top: $vertical-bumper;
+  &.double {
+    margin-top: $vertical-bumper * 2;
+  }
   &.half {
     margin-top: $vertical-bumper-half;
   }
@@ -57,6 +60,9 @@
 
 .bottom-margin {
   margin-bottom: $vertical-bumper;
+  &.double {
+    margin-bottom: $vertical-bumper * 2;
+  }
   &.half {
     margin-bottom: $vertical-bumper-half;
   }
@@ -75,6 +81,10 @@
 .margins {
   margin-top: $vertical-bumper;
   margin-bottom: $vertical-bumper;
+  &.double {
+    margin-top: $vertical-bumper * 2;
+    margin-bottom: $vertical-bumper * 2;
+  }
   &.half {
     margin-top: $vertical-bumper-half;
     margin-bottom: $vertical-bumper-half;
@@ -109,6 +119,9 @@
 
 .top-padding {
   padding-top: $vertical-bumper;
+  &.double {
+    padding-top: $vertical-bumper * 2;
+  }
   &.half {
     padding-top: $vertical-bumper-half;
   }
@@ -119,6 +132,9 @@
 
 .bottom-padding {
   padding-bottom: $vertical-bumper;
+  &.double {
+    padding-bottom: $vertical-bumper * 2;
+  }
   &.half {
     padding-bottom: $vertical-bumper-half;
   }
@@ -130,6 +146,10 @@
 .paddings {
   padding-top: $vertical-bumper;
   padding-bottom: $vertical-bumper;
+  &.double {
+    padding-top: $vertical-bumper * 2;
+    padding-bottom: $vertical-bumper * 2;
+  }
   &.half {
     padding-top: $vertical-bumper-half;
     padding-bottom: $vertical-bumper-half;

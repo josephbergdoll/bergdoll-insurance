@@ -7,20 +7,39 @@ layout: default
 section#get-quote.full-viewport
   .wrapper
   
-    .quote-form.small-12.medium-10.medium-offset-1
+    .quote-form.small-12.medium-10.medium-offset-1.large-8.large-offset-2
       form action=""
-        h1
-          | I live in
-          select#quote-state<> name="quote-state"
-            {% for state in site.data.quote.states %}
-            option value="{{ state.value }}" {{ state.title }}
-            {% endfor %} 
-          | and I want to insure my
-          select#quote-product<> name="quote-product" autofocus="autofocus"
-            option value="" disabled="disabled" selected="selected"
-            {% for product in site.data.quote.products %}
-            option value="{{ product.value }}" {{ product.title }}
-            {% endfor %}
+        | I live in
+        .pretty-select.js-pretty-select<>
+          .form-field
+            select.js-select id="quote-state" name="quote-state"
+              {% for option in site.data.quote.states %}
+              {% if forloop.first %}
+              option value="{{ option.value }}" selected="selected" {{ option.title }}
+              {% else %}
+              option value="{{ option.value }}" {{ option.title }}
+              {% endif %}
+              {% endfor %}
+          .select-container
+            span.selected-option
+            ul.select-options tabindex="-1"
+              {% for option in site.data.quote.states %}
+              li data-value="{{ option.value }}" {{ option.title }}
+              {% endfor %}
+        | and I want to insure my
+        #product-select.pretty-select.js-pretty-select<>
+          .form-field
+            select.js-select id="quote-product" name="quote-product"
+              option value="Select a Value" disabled="disabled" selected="selected" &hellip;
+              {% for option in site.data.quote.products %}
+              option value="{{ option.value }}" {{ option.title }}
+              {% endfor %}
+          .select-container
+            span.selected-option
+            ul.select-options tabindex="-1"
+              {% for option in site.data.quote.products %}
+              li data-value="{{ option.value }}" {{ option.title }}
+              {% endfor %}
 
 
         button#submit-quote.js-quote-submit disabled="disabled"
@@ -28,8 +47,11 @@ section#get-quote.full-viewport
 
 
 section#about
-  
-  / h2 {{ site.data.about.title }}
+  .wrapper
+    .row.paddings.double
+      .small-12.medium-6.medium-offset-3.large-4.large-offset-4.columns
+        h3.blue.bottom-margin.half Here for you, at all times.
+        p Lalalala
 
 section#contact
 

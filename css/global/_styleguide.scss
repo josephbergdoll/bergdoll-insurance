@@ -109,19 +109,19 @@ a {
 %sg-h3 {
   font-family: $sans;
   font-size: $type-mid;
-  font-weight: $type-book;
-  @extend %aa-text;
+  font-weight: $type-bold;
+  @extend %no-aa-text;
 }
 
 %sg-h4 {
-  font-family: $headline;
+  font-family: $sans;
   font-size: $type-small;
   font-weight: $type-medium;
   @extend %aa-text;
 }
 
 %sg-h5 {
-  font-family: $headline;
+  font-family: $sans;
   font-size: $type-paragraph;
   font-weight: $type-medium;
   @extend %aa-text;
@@ -498,6 +498,16 @@ blockquote {
     color: $text-grey-paragraph;
     &:hover {
       color: $black;
+    }
+  }
+}
+
+.blue {
+  color: $blue-highlight;
+  a {
+    color: $blue-highlight;
+    &:hover {
+      color: $blue-highlight-hover;
     }
   }
 }
