@@ -10,10 +10,15 @@
     <link href="{{ site.url }}/image/favicon.ico" rel='icon' type='image/x-icon'>
 
     <!-- JS -->
+    <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhrVTuToafCBe1SxRleu1FHB2u0L8R9gg&callback=initMap"></script>
     <script src="{{site.url}}/js/min/jquery-min.js"></script>
     <script src="{{site.url}}/js/min/modernizr-min.js"></script>
     <script src="{{site.url}}/js/min/plugins-min.js?v-1.0"></script>
     <script src="{{site.url}}/js/min/scripts-min.js?v=1.0.1"></script>
+
+    {% include mapScript.html %}
+    
+
 
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui">
 
