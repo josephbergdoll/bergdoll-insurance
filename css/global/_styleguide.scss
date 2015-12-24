@@ -83,7 +83,7 @@ a {
 
 %sg-h1 {
   font-family: $headline;
-  font-size: $type-small;
+  font-size: $type-mid;
   font-weight: $type-book;
   letter-spacing: $close-negative-tracking;
   @include media($medium-only) {
@@ -97,7 +97,7 @@ a {
 
 %sg-h2 {
   font-family: $headline;
-  font-size: $type-small;
+  font-size: $type-mid;
   font-weight: $type-medium;
   letter-spacing: $close-negative-tracking;
   @extend %aa-text;
@@ -116,19 +116,19 @@ a {
 %sg-h4 {
   font-family: $sans;
   font-size: $type-small;
-  font-weight: $type-medium;
+  font-weight: $type-bold;
   @extend %aa-text;
 }
 
 %sg-h5 {
   font-family: $sans;
   font-size: $type-paragraph;
-  font-weight: $type-medium;
+  font-weight: $type-bold;
   @extend %aa-text;
 }
 
 %sg-h6 {
-  font-family: $headline;
+  font-family: $sans;
   font-size: $type-paragraph;
   font-weight: $type-book;
   @extend %aa-text;

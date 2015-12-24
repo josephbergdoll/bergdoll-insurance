@@ -55,9 +55,14 @@ section#about
   .wrapper
     .row.paddings.double
       .small-12.medium-6.medium-offset-3.large-4.large-offset-4.columns
-        h3.blue.bottom-margin.half {{ page.aboutTitle }}
-        p Lalalala
-
+        h3.blue.bottom-margin.half {{ site.data.about.headline }}
+        p {{ site.data.about.copy }}
+        .agency-owner.top-margin.half
+          .owner-img
+            img src="{{ site.url }}/{{ site.data.about.owner.image }}" alt="{{ site.data.about.owner.name }}"
+          .owner-info
+            h4 {{ site.data.about.owner.name }}
+            h6.light-grey {{ site.data.about.owner.role }}
 section#contact
 
 {% include footer.slim %}

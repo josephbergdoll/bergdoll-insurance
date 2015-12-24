@@ -51,18 +51,28 @@
     @extend %sg-h5;
     color: $light-black;
     text-align: left;
-    display: none;
-    position: absolute;
-    top: 0;
+    position: fixed;
+    bottom: 0;
     left: 0;
     width: 100%;
-    width: rem(300);
-    max-height: 300px;
-    overflow: scroll;
-    border: $border-dark-grey;
-    border-radius: $standard-border-radius;
+    max-height: 50%;
+    display: none;
+    border-radius: $standard-border-radius $standard-border-radius 0 0;
     opacity: 0;
     z-index: 200;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    @include media($medium-up) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: auto;
+      width: 100%;
+      width: rem(300);
+      max-height: 300px;
+      border: $border-dark-grey;
+      border-radius: $standard-border-radius;
+    }
 
     li {
       cursor: pointer;
