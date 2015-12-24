@@ -65,5 +65,9 @@ section#about
             h6.light-grey {{ site.data.about.owner.role }}
 section#contact
   #map
-
+  .gradient-overlay
+  .row
+    .contact-info.paddings.small-12.medium-6.large-4.large-offset-8.columns
+      h3.blue.bottom-margin.half {{ site.data.contact.headline }}
+      p {{ site.data.contact.copy }}
 {% include footer.slim %}

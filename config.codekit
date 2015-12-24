@@ -93,15 +93,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/_site\/fonts\/snazzy-maps-example-blue-water-style.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_site\/fonts\/snazzy-maps-example-blue-water-style.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/_site\/images\/bill.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -109,6 +100,28 @@
 		"initialSize": 93383,
 		"inputAbbreviatedPath": "\/_site\/images\/bill.jpg",
 		"outputAbbreviatedPath": "\/_site\/images\/bill.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_site\/images\/mapicon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3040,
+		"inputAbbreviatedPath": "\/_site\/images\/mapicon.png",
+		"outputAbbreviatedPath": "\/_site\/images\/mapicon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/_site\/images\/mapicon_bottom.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5116,
+		"inputAbbreviatedPath": "\/_site\/images\/mapicon_bottom.png",
+		"outputAbbreviatedPath": "\/_site\/images\/mapicon_bottom.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -935,15 +948,6 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/fonts\/snazzy-maps-example-blue-water-style.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/fonts\/snazzy-maps-example-blue-water-style.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/images\/bill.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -951,6 +955,28 @@
 		"initialSize": 93383,
 		"inputAbbreviatedPath": "\/images\/bill.jpg",
 		"outputAbbreviatedPath": "\/images\/bill.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/mapicon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3040,
+		"inputAbbreviatedPath": "\/images\/mapicon.png",
+		"outputAbbreviatedPath": "\/images\/mapicon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/mapicon_bottom.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2913,
+		"inputAbbreviatedPath": "\/images\/mapicon_bottom.png",
+		"outputAbbreviatedPath": "\/images\/mapicon_bottom.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
