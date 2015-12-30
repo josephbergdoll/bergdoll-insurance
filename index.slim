@@ -68,6 +68,34 @@ section#contact
   .gradient-overlay
   .row
     .contact-info.paddings.small-12.medium-6.large-4.large-offset-8.columns
-      h3.blue.bottom-margin.half {{ site.data.contact.headline }}
-      p {{ site.data.contact.copy }}
+      .contact-section
+        h3.blue.bottom-margin.quarter {{ site.data.contact.headline }}
+        p {{ site.data.contact.copy }}
+
+      {% for section in site.data.contact.sections %}
+      .contact-section
+        h4.bottom-margin.quarter {{ section.headline }}
+        p {{ section.copy }}
+        {% if section.links %}
+        .section-links.top-margin.quarter
+          {% if section.linksLayout == 'inline' %}
+          {% for link in section.links %}
+          a href="{{ link.url }}" target="new"
+            | {{ link.text }}
+          {% unless forloop.last %}
+          span.sep-ndash<>
+          {% endunless %}
+          {% endfor %}
+          {% elsif section.linksLayout == 'list' %}
+          ul
+            {% for link in section.links %}
+            li
+              p
+                | {{ link.title }}
+                span.sep-ndash<>
+                a href="{{ link.url }}" target="new" {{ link.text }}
+            {% endfor %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
 {% include footer.slim %}

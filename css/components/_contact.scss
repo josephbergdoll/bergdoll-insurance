@@ -16,12 +16,26 @@
     right: 0;
     bottom: 0;
     width: 50%;
-    @include linear-gradient(-90deg, #f2f2f2 45%, transparent 100%, $fallback: transparent);
+    @include linear-gradient(-90deg, #f2f2f2 35%, transparent 100%, $fallback: transparent);
     z-index: 5;
   }
 
   .contact-info {
     position: relative;
     z-index: 10;
+  }
+
+  .contact-section {
+    h4 {
+      &:before {
+        content: '\2022\00a0';
+        color: $blue-highlight;
+      }
+    }
+    &:not(:last-of-type) {
+      padding-bottom: $vertical-bumper-quarter;
+      margin-bottom: $vertical-bumper-quarter;
+      border-bottom: $standard-border-opacity;
+    }
   }
 }
