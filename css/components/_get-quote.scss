@@ -3,10 +3,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: $vertical-bumper * 1.5;
+  padding-bottom: $vertical-bumper * 1.5;
 
   .get-quote-text {
     color: $white-light-transparent;
-    margin-top: -$vertical-bumper;
   }
 
   .quote-form {

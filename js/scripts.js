@@ -7,6 +7,45 @@ $(document).ready(function() {
     $getQuote = $body.find('#get-quote'),
     $submitQuote = $body.find('#submit-quote');
 
+  $.fn.openSelect = function() {
+    var
+      $body = $('body'),
+      $options = $(this).find('.select-options'),
+      showOptionsClass = 'show-options',
+      $keyboardTrigger = $(this).find('.js-keyboard-trigger');
+    if ($body.find('.'+showOptionsClass)) {
+      closeSelect();
+    }
+    if (!$(this).hasClass(showOptionsClass)) {
+      $(this).addClass(showOptionsClass);
+      $options.attr('tabindex', '0');
+      $options.velocity('slideDown', {duration: 300, easing: "easeOutCubic", queue: false});
+      $options.velocity({opacity: 1}, {duration: 300, easing: "easeOutCubic", queue: false, complete:
+        function() {
+          $keyboardTrigger.attr('tabindex', '-1');
+          $options.focus();
+        }
+      });
+    }
+    return this;
+  }
+
+  function closeSelect() {
+    var
+      $body = $('body'),
+      showOptionsClass = 'show-options';
+    if ($body.find('.'+showOptionsClass)) {
+      var
+        $openOptions = $body.find('.'+showOptionsClass),
+        $options = $openOptions.find('.select-options'),
+        $keyboardTrigger = $openOptions.find('.js-keyboard-trigger');
+      $openOptions.removeClass(showOptionsClass);
+      $options.velocity('fadeOut', {duration: 200, easing: "easeOutCubic"});
+      $options.attr('tabindex', '-1');
+      $keyboardTrigger.attr('tabindex', '0');
+    }
+  }
+
   $getQuote.find('.js-pretty-select').each(function() {
     var
       $prettySelect = $(this),
@@ -15,6 +54,7 @@ $(document).ready(function() {
       valueLabel = $realSelect.find('option:selected').text(),
       $selected = $prettySelect.find('.selected-option'),
       $options = $prettySelect.find('.select-options'),
+      $keyboardTrigger = $prettySelect.find('.js-keyboard-trigger'),
       showOptionsClass = 'show-options',
       validClass = 'valid',
       selectedClass = 'selected';
@@ -32,19 +72,21 @@ $(document).ready(function() {
       $selected.text(placeholder);
     }
 
-    $selected.click(function(e) {
+    $keyboardTrigger.off('focusin').focusin(function() {
+      $keyboardTrigger.focusout();
+      $prettySelect.openSelect();
+    });
+
+    $selected.on('click', function(e) {
       e.preventDefault();
-      if ($body.find('.'+showOptionsClass)) {
-        var $openOptions = $body.find('.'+showOptionsClass);
-        $openOptions.removeClass(showOptionsClass);
-        $openOptions.find('.select-options').velocity('fadeOut', {duration: 200, easing: "easeOutCubic"});
-      }
-      if (!$prettySelect.hasClass(showOptionsClass)) {
-        $prettySelect.addClass(showOptionsClass);
-        $options.velocity('slideDown', {duration: 300, easing: "easeOutCubic", queue: false});
-        $options.velocity({opacity: 1}, {duration: 300, easing: "easeOutCubic", queue: false});
-        $options.focus();
-      }
+      $prettySelect.openSelect();
+    });
+
+    $options.focusin(function() {
+    });
+
+    $options.focusout(function() {
+      closeSelect();
     });
 
     $options.find('li').click(function(e) {
@@ -95,6 +137,21 @@ $(document).ready(function() {
       }
     }, 300);
     
+  });
+
+
+  $(window).scroll(function() {
+    var
+      st = $(window).scrollTop(),
+      $header = $body.find('.header-main'),
+      headerHeight = $header.outerHeight(),
+      quoteHeight = $body.find('#get-quote').outerHeight();
+    if (st > (quoteHeight - headerHeight) && !$header.hasClass('scrolled')) {
+      $header.addClass('scrolled');
+    }
+    else if (st < (quoteHeight - headerHeight) && $header.hasClass('scrolled')) {
+      $header.removeClass('scrolled');
+    }
   });
 
   

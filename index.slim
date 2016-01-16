@@ -23,8 +23,8 @@ section#get-quote.full-viewport
               {% endif %}
               {% endfor %}
           .select-container
+            span.js-keyboard-trigger tabindex="0"
             span.selected-option
-            ul.select-keyboard-trigger tabindex="0"
             ul.select-options tabindex="-1"
               {% for option in site.data.quote.states %}
               li data-value="{{ option.value }}" {{ option.title }}
@@ -38,8 +38,8 @@ section#get-quote.full-viewport
               option value="{{ option.value }}" {{ option.title }}
               {% endfor %}
           .select-container
+            span.js-keyboard-trigger tabindex="0"
             span.selected-option
-            ul.select-keyboard-trigger tabindex="0"
             ul.select-options tabindex="-1"
               {% for option in site.data.quote.products %}
               li data-value="{{ option.value }}" {{ option.title }}
@@ -56,7 +56,7 @@ section#about
     .row.paddings.double
       .small-12.medium-6.medium-offset-3.large-4.large-offset-4.columns
         h3.blue.bottom-margin.half {{ site.data.about.headline }}
-        p {{ site.data.about.copy }}
+        p.line-large {{ site.data.about.copy }}
         .agency-owner.top-margin.half
           .owner-img
             img src="{{ site.url }}/{{ site.data.about.owner.image }}" alt="{{ site.data.about.owner.name }}"
@@ -66,36 +66,35 @@ section#about
 section#contact
   #map
   .gradient-overlay
-  .row
-    .contact-info.paddings.small-12.medium-6.large-4.large-offset-8.columns
-      .contact-section
-        h3.blue.bottom-margin.quarter {{ site.data.contact.headline }}
-        p {{ site.data.contact.copy }}
+  .wrapper
+    .flex-row
+      .contact-info.paddings.small-12.medium-6.large-4.large-offset-8.flex-columns
+        .contact-section
+          h3.blue.bottom-margin.quarter {{ site.data.contact.headline }}
+          p {{ site.data.contact.copy }}
 
-      {% for section in site.data.contact.sections %}
-      .contact-section
-        h4.bottom-margin.quarter {{ section.headline }}
-        p {{ section.copy }}
-        {% if section.links %}
-        .section-links.top-margin.quarter
-          {% if section.linksLayout == 'inline' %}
-          {% for link in section.links %}
-          a href="{{ link.url }}" target="new"
-            | {{ link.text }}
-          {% unless forloop.last %}
-          span.sep-ndash<>
-          {% endunless %}
-          {% endfor %}
-          {% elsif section.linksLayout == 'list' %}
-          ul
+        {% for section in site.data.contact.sections %}
+        .contact-section
+          h4.bottom-margin.quarter {{ section.headline }}
+          p {{ section.copy }}
+          {% if section.links %}
+          .section-links.top-margin.quarter
+            {% if section.linksLayout == 'inline' %}
             {% for link in section.links %}
-            li
-              p
-                | {{ link.title }}
-                span.sep-ndash<>
-                a href="{{ link.url }}" target="new" {{ link.text }}
+            a.h5 href="{{ link.url }}" target="new"
+              | {{ link.text }}
+            {% unless forloop.last %}
+            span.sep-ndash<>
+            {% endunless %}
             {% endfor %}
+            {% elsif section.linksLayout == 'list' %}
+            ul
+              {% for link in section.links %}
+              li
+                h5.dark-grey {{ link.title }}
+                a.h5 href="{{ link.url }}" target="new" {{ link.text }}
+              {% endfor %}
+            {% endif %}
           {% endif %}
-        {% endif %}
-      {% endfor %}
+        {% endfor %}
 {% include footer.slim %}
