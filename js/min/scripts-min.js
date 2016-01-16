@@ -91,7 +91,7 @@ $(document).ready(function() {
           optionsHeight = $options.outerHeight(),
           scrolledPoint = $options.scrollTop();
 
-        if (e.keyCode === 40 || e.keyCode === 38) {
+        if (e.keyCode === 40 || e.keyCode === 38 || e.keyCode === 13) {
           e.preventDefault();
         }
         // Down Arrow
@@ -143,6 +143,10 @@ $(document).ready(function() {
               $options.scrollTop(scrollDistance - optionsHeight * 3);
             }
           }
+        }
+        // Enter Key
+        else if (e.keyCode === 13) {
+          $options.find(highlightSelector).trigger('click');
         }
 
       });
