@@ -28,7 +28,7 @@ $(document).ready(function() {
       });
     }
     return this;
-  }
+  };
 
   function closeSelect() {
     var
@@ -40,7 +40,7 @@ $(document).ready(function() {
         $options = $openOptions.find('.select-options'),
         $keyboardTrigger = $openOptions.find('.js-keyboard-trigger');
       $openOptions.removeClass(showOptionsClass);
-      $options.velocity('fadeOut', {duration: 200, easing: "easeOutCubic"});
+      $options.focusout().velocity('fadeOut', {duration: 200, easing: "easeOutCubic"});
       $options.attr('tabindex', '-1');
       $keyboardTrigger.attr('tabindex', '0');
     }
@@ -58,8 +58,6 @@ $(document).ready(function() {
       showOptionsClass = 'show-options',
       validClass = 'valid',
       selectedClass = 'selected';
-
-      console.log(value);
 
     if (value != null || value != undefined) {
       var $selectedOption = $options.find('li[data-value="'+value+'"]');
@@ -83,6 +81,71 @@ $(document).ready(function() {
     });
 
     $options.focusin(function() {
+
+      $(window).keydown(function(e) {
+        var
+          $option = $options.find('li'),
+          $optionHeight = $option.first().outerHeight(),
+          highlightClass = 'highlight',
+          highlightSelector = '.highlight',
+          optionsHeight = $options.outerHeight(),
+          scrolledPoint = $options.scrollTop();
+
+        if (e.keyCode === 40 || e.keyCode === 38) {
+          e.preventDefault();
+        }
+        // Down Arrow
+        if (e.keyCode === 40) {
+          console.log('down arrow');
+          if (!$options.find(highlightSelector).length) {
+            console.log('no highlight yet');
+            $options.find('li:first').addClass(highlightClass);
+            if (scrollDistance > optionsHeight) {
+              $options.scrollTop(scrollDistance + optionsHeight * 3);
+            }
+            else if (scrollDistance < scrolledPoint) {
+              $options.scrollTop(scrollDistance - optionsHeight * 3);
+            }
+          }
+          else {
+            $options.find(highlightSelector).removeClass(highlightClass).next().addClass(highlightClass);
+            var scrollDistance = $options.find(highlightSelector).position().top;
+            if (scrollDistance > optionsHeight) {
+              $options.scrollTop(scrollDistance + optionsHeight * 3);
+            }
+            else if (scrollDistance < scrolledPoint) {
+              $options.scrollTop(scrollDistance - optionsHeight * 3);
+            }
+          }
+
+        }
+        // Up Arrow
+        else if (e.keyCode === 38) {
+          console.log('up arrow');
+          if (!$options.find(highlightSelector).length) {
+            console.log('no highlight yet');
+            $options.find('li:last').addClass(highlightClass);
+            var scrollDistance = $options.find(highlightSelector).position().top;
+            if (scrollDistance > optionsHeight) {
+              $options.scrollTop(scrollDistance + optionsHeight * 3);
+            }
+            else if (scrollDistance < scrolledPoint) {
+              $options.scrollTop(scrollDistance - optionsHeight * 3);
+            }
+          }
+          else {
+            $options.find(highlightSelector).removeClass(highlightClass).prev().addClass(highlightClass);
+            var scrollDistance = $options.find(highlightSelector).position().top;
+            if (scrollDistance > optionsHeight) {
+              $options.scrollTop(scrollDistance + optionsHeight * 3);
+            }
+            else if (scrollDistance < scrolledPoint) {
+              $options.scrollTop(scrollDistance - optionsHeight * 3);
+            }
+          }
+        }
+
+      });
     });
 
     $options.focusout(function() {
@@ -133,7 +196,7 @@ $(document).ready(function() {
         win.focus();
       }
       else {
-        alert('Please allow popups.');
+        window.location.href = nwQuoteUrl;
       }
     }, 300);
     

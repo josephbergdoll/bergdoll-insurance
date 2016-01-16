@@ -34,7 +34,8 @@
     line-height: $line-small * 1.1;
     cursor: pointer;
     border-bottom: $thick-border-width solid $white-light-transparent;
-    &:hover {
+    &:hover,
+    &.highlight {
       color: $white;
       background: $blue-bg-dark;
       border-bottom: $thick-border-width solid $blue-highlight;
@@ -86,7 +87,8 @@
       &:not(:last-of-type) {
         border-bottom: $standard-border;
       }
-      &:hover {
+      &:hover,
+      &.highlight {
         background: $light-grey;
         transition: all $hover-in $ease-out-cubic;
       }
