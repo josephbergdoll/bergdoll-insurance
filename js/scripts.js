@@ -100,6 +100,7 @@ $(document).ready(function() {
           if (!$options.find(highlightSelector).length) {
             console.log('no highlight yet');
             $options.find('li:first').addClass(highlightClass);
+            var scrollDistance = $options.find(highlightSelector).position().top;
             if (scrollDistance > optionsHeight) {
               $options.scrollTop(scrollDistance + optionsHeight * 3);
             }
