@@ -239,6 +239,12 @@ $(document).ready(function() {
     }
   });
 
+  $body.find('.nav-main').on('click', 'a', function(e) {
+    e.preventDefault();
+    var href = e.currentTarget.hash;
+    $(href).velocity('scroll', {duration: 500, easing: "easeInOutCubic"});
+  });
+
   
 
 });
