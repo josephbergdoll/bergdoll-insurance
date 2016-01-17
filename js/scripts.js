@@ -40,7 +40,7 @@ $(document).ready(function() {
         $options = $openOptions.find('.select-options'),
         $keyboardTrigger = $openOptions.find('.js-keyboard-trigger');
       $openOptions.removeClass(showOptionsClass);
-      $options.focusout().velocity('fadeOut', {duration: 200, easing: "easeOutCubic"});
+      $options.velocity('fadeOut', {duration: 200, easing: "easeOutCubic"});
       $options.attr('tabindex', '-1');
       $keyboardTrigger.attr('tabindex', '0');
     }
@@ -213,12 +213,29 @@ $(document).ready(function() {
       st = $(window).scrollTop(),
       $header = $body.find('.header-main'),
       headerHeight = $header.outerHeight(),
-      quoteHeight = $body.find('#get-quote').outerHeight();
+      currentMenuClass = 'current-menu-item',
+      currentMenuSelector = '.' + currentMenuClass,
+      quoteHeight = $body.find('#get-quote').outerHeight(),
+      aboutOffset = $body.find('#about').offset().top,
+      contactOffset = $body.find('#contact').offset().top;
     if (st > (quoteHeight - headerHeight) && !$header.hasClass('scrolled')) {
       $header.addClass('scrolled');
     }
     else if (st < (quoteHeight - headerHeight) && $header.hasClass('scrolled')) {
       $header.removeClass('scrolled');
+    }
+
+    if (st >= aboutOffset - headerHeight && st < contactOffset - headerHeight) {
+      $body.find(currentMenuSelector).removeClass(currentMenuClass);
+      $('.nav-main a[href="/#about"').addClass(currentMenuClass);
+    }
+    else if (st >= contactOffset - headerHeight) {
+      $body.find(currentMenuSelector).removeClass(currentMenuClass);
+      $('.nav-main a[href="/#contact"').addClass(currentMenuClass);
+    }
+    else if (st < aboutOffset - headerHeight) {
+      $body.find(currentMenuSelector).removeClass(currentMenuClass);
+      $('.nav-main a[href="/#get-quote"').addClass(currentMenuClass);
     }
   });
 

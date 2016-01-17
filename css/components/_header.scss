@@ -38,6 +38,16 @@
       span {
         position: relative;
         padding-top: $full-gutter;
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: -5px;
+          left: 0;
+          width: 100%;
+          border-bottom: $thick-border-width solid $blue-highlight;
+          transition: all $hover-out $ease-out-cubic;
+        }
       }
       &:not(:hover) {
         color: $white-transparent;
@@ -55,13 +65,7 @@
         }
         span {
           &:before {
-            content: '';
-            display: block;
-            position: absolute;
             top: 3px;
-            left: 0;
-            width: 100%;
-            border-bottom: $thick-border-width solid $blue-highlight;
           }
         }
       }
