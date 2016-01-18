@@ -1,27 +1,67 @@
+$contact-height: calc( 100vh - (#{$footer-height} + #{$header-height-large}) );
+
 #contact {
-  min-height: calc(100vh - (#{$footer-height} + #{$header-height}));
   position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  background: $light-grey;
+  @include media($medium-up) {
+    min-height: $contact-height;
+  }
 
-
-  #map {
+  .overlays {
     position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
     right: 0;
+    bottom: 0;
+    display: none;
+    @include media($medium-up) {
+      display: block;
+    }
+  }
+
+
+  #map {
+    @include media($medium-up) {
+      padding-top: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: block;
+    }
   }
 
   .gradient-overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 50%;
-    @include linear-gradient(-90deg, #f2f2f2 40%, transparent 100%, $fallback: transparent);
-    z-index: 5;
+    @include media($medium-only) {
+      @include linear-gradient(-90deg, #f2f2f2 60%, transparent 100%, $fallback: transparent);
+    }
+    @include media($medium-up) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 50%;
+      z-index: 5;
+    }
+    
+    @include media($large-up) {
+      @include linear-gradient(-90deg, #f2f2f2 45%, transparent 100%, $fallback: transparent);
+    }
+  }
+
+
+  .contact-wrap {
+    @include media($medium-up) {
+      min-height: $contact-height;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .wrap-inner {
+    width: 100%;
   }
 
   .contact-info {

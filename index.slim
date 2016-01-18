@@ -8,8 +8,8 @@ aboutTitle: 'Here for you, at all times.'
 section#get-quote.full-viewport
   .wrapper
   
-    .quote-form.invalid.small-12.medium-10.medium-offset-1
-      h5.get-quote-text.bottom-margin Let's get you a quote &mdash; it's fast and free.
+    .quote-form.invalid.small-12.large-10.large-offset-1
+      h5.get-quote-text Let's get you a quote &mdash; it's fast and free.
       form action="" tabindex="1"
         | I live in
         .pretty-select.js-pretty-select<>
@@ -64,37 +64,39 @@ section#about
             h4 {{ site.data.about.owner.name }}
             h6.light-grey {{ site.data.about.owner.role }}
 section#contact
-  #map
-  .gradient-overlay
-  .wrapper
-    .flex-row
-      .contact-info.paddings.small-12.medium-6.large-4.large-offset-8.flex-columns
-        .contact-section
-          h3.blue.bottom-margin.quarter {{ site.data.contact.headline }}
-          p {{ site.data.contact.copy }}
+  .overlays
+    #map
+    .gradient-overlay
+  .contact-wrap.wrapper
+    .wrap-inner
+      .flex-row
+        .contact-info.paddings.small-12.medium-6.large-4.large-offset-8.flex-columns
+          .contact-section
+            h3.blue.bottom-margin.quarter {{ site.data.contact.headline }}
+            p {{ site.data.contact.copy }}
 
-        {% for section in site.data.contact.sections %}
-        .contact-section
-          h4.bottom-margin.quarter {{ section.headline }}
-          p {{ section.copy }}
-          {% if section.links %}
-          .section-links.top-margin.quarter
-            {% if section.linksLayout == 'inline' %}
-            {% for link in section.links %}
-            a.h5 href="{{ link.url }}" target="new"
-              | {{ link.text }}
-            {% unless forloop.last %}
-            span.sep-ndash<>
-            {% endunless %}
-            {% endfor %}
-            {% elsif section.linksLayout == 'list' %}
-            ul
+          {% for section in site.data.contact.sections %}
+          .contact-section
+            h4.bottom-margin.quarter {{ section.headline }}
+            p {{ section.copy }}
+            {% if section.links %}
+            .section-links.top-margin.quarter
+              {% if section.linksLayout == 'inline' %}
               {% for link in section.links %}
-              li
-                h5.dark-grey {{ link.title }}
-                a.h5 href="{{ link.url }}" target="new" {{ link.text }}
+              a.h5 href="{{ link.url }}" target="new"
+                | {{ link.text }}
+              {% unless forloop.last %}
+              span.sep-ndash<>
+              {% endunless %}
               {% endfor %}
+              {% elsif section.linksLayout == 'list' %}
+              ul
+                {% for link in section.links %}
+                li
+                  h5.dark-grey {{ link.title }}
+                  a.h5 href="{{ link.url }}" target="new" {{ link.text }}
+                {% endfor %}
+              {% endif %}
             {% endif %}
-          {% endif %}
-        {% endfor %}
+          {% endfor %}
 {% include footer.slim %}

@@ -3,25 +3,33 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: $vertical-bumper * 1.5;
-  padding-bottom: $vertical-bumper * 1.5;
+  padding-top: $header-height-small;
+  padding-bottom: $header-height-small;
+  @include media($medium-up) {
+    padding-top: $vertical-bumper * 1.5;
+    padding-bottom: $vertical-bumper * 1.5;
+  }
 
   .get-quote-text {
     color: $white-light-transparent;
+    margin-bottom: $vertical-bumper-half;
+    @include media($medium-up) {
+      margin-bottom: $vertical-bumper;
+    }
   }
 
   .quote-form {
-    margin-top: $vertical-bumper;
+    margin-top: $vertical-bumper-half;
     text-align: center;
     color: $white-mid-transparent;
+    @include media($medium-up) {
+      margin-top: $vertical-bumper;
+    }
 
     form {
       font-family: $headline;
-      font-size: 10vw;
+      font-size: 6.5vw;
       line-height: $line-medium;
-      @include media($medium-only) {
-        font-size: 8vw;
-      }
       @include media($large-up) {
         font-size: 5vw;
       }
@@ -30,7 +38,10 @@
 
   button {
     display: block;
-    margin: $vertical-bumper auto 0;
+    margin: $vertical-bumper-half auto 0;
+    @include media($medium-up) {
+      margin: $vertical-bumper auto 0;
+    }
   }
 
   #product-select .selected-option {

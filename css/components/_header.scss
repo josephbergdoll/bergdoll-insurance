@@ -5,15 +5,22 @@
   width: 100%;
   background: $blue-bg-translucent;
   padding: $half-gutter $full-gutter * 0.75;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   z-index: 10;
   transition: all $short-transition $ease-out-cubic;
+  @include media($medium-up) {
+    display: flex;
+    justify-content: space-between;
+  }
 
   .logo {
-    display: inline-block;
-    width: rem(160);
+    display: block;
+    width: rem(120);
+    margin: 0 auto;
+    @include media($medium-up) {
+      margin: 0;
+      width: rem(160);
+    }
     svg {
       max-width: 100%;
     }
@@ -27,6 +34,10 @@
   }
 
   .nav-main {
+    display: none;
+    @include media($medium-up) {
+      display: block;
+    }
     a {
       @extend %aa-text;
       display: inline-block;

@@ -7,8 +7,9 @@ $wrapper-padding-medium: 1.5rem;
 $wrapper-padding-large: 2rem;
 $wrapper-padding-xxlarge: 2rem;
 
-$header-height-small: rem(50);
-$header-height-large: rem(108);
+$header-height-small: rem(61);
+$header-height-large: rem(77);
+$footer-height: rem(74);
 
 // Type Styles
 // $sans: "BIFS-sans", 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -119,9 +120,6 @@ $vertical-bumper-half: $vertical-bumper * 0.5;
 $vertical-bumper-third: $vertical-bumper * 0.33;
 $vertical-bumper-quarter: $vertical-bumper * 0.25;
 $vertical-bumper-eighth: $vertical-bumper * 0.125;
-
-$header-height: rem(77);
-$footer-height: rem(74);
 
 
 $large-nav-width: 9.375rem;
